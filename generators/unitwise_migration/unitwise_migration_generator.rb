@@ -1,5 +1,7 @@
 class UnitwiseMigrationGenerator < Rails::Generator::Base 
-  def manifest 
+	
+  def manifest	
+  	puts "gemmmmmmmmmm"
     record do |m| 
       m.migration_template 'migration.rb', 'db/migrate', :migration_file_name => "unitwise_migration"
     end

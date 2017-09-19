@@ -3,6 +3,7 @@ require 'rails/generators/migration'
 module Unitwise
   class MigrationGenerator < Rails::Generators::Base
     include Rails::Generators::Migration
+    puts "helloooooooooooooooooooooooooooooooooooooooooooo"
 
     desc "Generates migration for Tag and Tagging models"
 
