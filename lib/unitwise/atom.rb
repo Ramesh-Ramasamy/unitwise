@@ -10,8 +10,8 @@ module Unitwise
       # Array of hashes representing atom properties.
       # @api private
       def data
-        puts "unitwise"
-        @data ||= data_files.map { |file| YAML.load(File.open file) }.flatten
+        # @data ||= data_files.map { |file| YAML.load(File.open file) }.flatten
+        @data ||= [UnitwiseMigration::MeasurementBaseUnit.all.map(&:attributes),UnitwiseMigration::MeasurementDerivedUnit.all.map(&:attributes)].flatten.map(&:with_indifferent_access)
       end
 
       # Data files containing atom data
