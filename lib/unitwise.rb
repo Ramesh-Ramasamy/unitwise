@@ -55,6 +55,13 @@ module Unitwise
   def self.data_file(key)
     File.join path, 'data', "#{key}.yaml"
   end
+
+  def self.insert_units_to_db
+    Unitwise::MeasurementBaseUnit.insert_base_unit
+    Unitwise::MeasurementDerivedUnit.insert_derived_unit
+    Unitwise::MeasurementPrefixUnit.insert_prefix_unit
+  end
+
 end
 
 # Measurement initializer shorthand. Use this to instantiate new measurements.
