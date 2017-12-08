@@ -11,7 +11,7 @@ module Unitwise
       # @api private
       def data
         # @data ||= data_files.map { |file| YAML.load(File.open file) }.flatten
-        @data ||= [UnitwiseMigration::MeasurementBaseUnit.all.map(&:attributes),UnitwiseMigration::MeasurementDerivedUnit.all.map(&:attributes)].flatten.map(&:with_indifferent_access)
+        @data ||= [Unitwise::MeasurementBaseUnit.all.map(&:attributes),Unitwise::MeasurementDerivedUnit.all.map(&:attributes)].flatten.map(&:with_indifferent_access)
       end
 
       # Data files containing atom data

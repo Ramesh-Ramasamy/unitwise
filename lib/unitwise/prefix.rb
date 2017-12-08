@@ -7,7 +7,7 @@ module Unitwise
     # @api semipublic
     def self.data
       # @data ||= YAML.load File.open(data_file)
-      @data ||= UnitwiseMigration::MeasurementPrefixUnit.all.map(&:attributes).map(&:with_indifferent_access)
+      @data ||= Unitwise::MeasurementPrefixUnit.all.map(&:attributes).map(&:with_indifferent_access)
     end
 
     # The location of the UCUM spec prefix data file
