@@ -1,6 +1,6 @@
 class UnitwiseMigration < ActiveRecord::Migration
   def self.up
-    create_table (:measurement_base_units, :options => 'ENGINE=InnoDB DEFAULT CHARSET=utf8') do |t|
+    create_table (:measurement_base_units,:primary_key => :measurement_base_unit_id, :options => 'ENGINE=InnoDB DEFAULT CHARSET=utf8') do |t|
       t.column :names, :string
       t.column :symbol, :string
       t.column :primary_code, :string
@@ -8,7 +8,7 @@ class UnitwiseMigration < ActiveRecord::Migration
       t.column :property, :string
       t.column :dim, :string
     end
-    create_table (:measurement_derived_units, :options => 'ENGINE=InnoDB DEFAULT CHARSET=utf8') do |t|
+    create_table (:measurement_derived_units,:primary_key => :measurement_derived_unit_id,:options => 'ENGINE=InnoDB DEFAULT CHARSET=utf8') do |t|
       t.column :names, :text
       t.column :symbol, :string
       t.column :primary_code, :string
@@ -22,7 +22,7 @@ class UnitwiseMigration < ActiveRecord::Migration
       t.column :priority, :integer, :null => false, :default => 0
 
     end
-    create_table (:measurement_prefix_units, :options => 'ENGINE=InnoDB DEFAULT CHARSET=utf8') do |t|
+    create_table (:measurement_prefix_units,:primary_key => :measurement_prefix_unit_id,:options => 'ENGINE=InnoDB DEFAULT CHARSET=utf8') do |t|
       t.column :names, :string
       t.column :symbol, :string
       t.column :primary_code, :string

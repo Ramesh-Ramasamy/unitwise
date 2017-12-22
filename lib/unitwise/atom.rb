@@ -3,7 +3,7 @@ module Unitwise
   # scaled units without prefixes, multipliers, exponents, etc. Examples are
   # 'meter', 'hour', 'pound force'.
   class Atom < Base
-    liner :classification, :property, :metric, :special, :arbitrary, :dim, :priority, :id
+    liner :classification, :property, :metric, :special, :arbitrary, :dim, :priority, :measurement_derived_unit_id
     include Compatible
 
     class << self
