@@ -3,7 +3,7 @@ module Unitwise
   # scaled units without prefixes, multipliers, exponents, etc. Examples are
   # 'meter', 'hour', 'pound force'.
   class Atom < Base
-    liner :classification, :property, :metric, :special, :arbitrary, :dim, :priority
+    liner :classification, :property, :metric, :special, :arbitrary, :dim, :priority, :id
     include Compatible
 
     class << self
@@ -14,7 +14,7 @@ module Unitwise
         @data ||= [Unitwise::MeasurementBaseUnit.all.map(&:attributes),Unitwise::MeasurementDerivedUnit.all.map(&:attributes)].flatten.map(&:with_indifferent_access)
       end
 
-      # Data files containing atom data
+        # Data files containing atom data
       # @api private
       def data_files
         %w(base_unit derived_unit).map { |type| Unitwise.data_file type }

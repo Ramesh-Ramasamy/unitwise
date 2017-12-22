@@ -1,7 +1,7 @@
 module Unitwise
   # A prefix can be used with metric atoms to modify their scale.
   class Prefix < Base
-    liner :scalar
+    liner :scalar, :id
 
     # The data loaded from the UCUM spec files
     # @api semipublic

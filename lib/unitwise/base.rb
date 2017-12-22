@@ -2,7 +2,7 @@ module Unitwise
   # The base class that Atom and Prefix are extended from. This class provides
   # shared functionality for said classes.
   class Base
-    liner :names, :primary_code, :secondary_code, :symbol, :scale
+    liner :names, :primary_code, :secondary_code, :symbol, :scale, :id
     include Memoizable
 
     # The list of tracked items.
