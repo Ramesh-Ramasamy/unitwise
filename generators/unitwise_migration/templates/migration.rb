@@ -29,6 +29,9 @@ class UnitwiseMigration < ActiveRecord::Migration
       t.column :secondary_code, :string
       t.column :scalar, :string
     end
+    add_index :measurement_base_units, [:names,:symbol,:primary_code], :unique => true
+    add_index :measurement_derived_units, [:names,:symbol,:primary_code], :unique => true
+    add_index :measurement_prefix_units, [:names,:symbol,:primary_code], :unique => true
   end
   
   def self.down
